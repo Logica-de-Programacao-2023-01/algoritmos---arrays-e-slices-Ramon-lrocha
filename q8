@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	slice := make([]string, 8)
+
+	// Preenchendo o slice com valores iniciais
+	slice[0] = "banana"
+	slice[1] = "maçã"
+	slice[2] = "laranja"
+	slice[3] = "banana"
+	slice[4] = "uva"
+	slice[5] = "abacaxi"
+	slice[6] = "banana"
+	slice[7] = "morango"
+
+	var value string
+	fmt.Print("Digite um valor: ")
+	fmt.Scan(&value)
+
+	result := make([]string, 0)
+
+	for _, item := range slice {
+		if item != value {
+			result = append(result, item)
+		}
+	}
+
+	fmt.Println("Slice Resultante:", result)
+}

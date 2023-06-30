@@ -1,0 +1,34 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	slice := make([]int, 8)
+
+	// Preenchendo o slice com valores iniciais
+	slice[0] = 1
+	slice[1] = 2
+	slice[2] = 3
+	slice[3] = 4
+	slice[4] = 5
+	slice[5] = 6
+	slice[6] = 7
+	slice[7] = 8
+
+	var index1, index2 int
+	fmt.Print("Digite o primeiro índice: ")
+	fmt.Scan(&index1)
+	fmt.Print("Digite o segundo índice: ")
+	fmt.Scan(&index2)
+
+	// Verificando se os índices são válidos
+	if index1 >= 0 && index1 < len(slice) && index2 >= 0 && index2 < len(slice) {
+		// Trocando os elementos de posição
+		slice[index1], slice[index2] = slice[index2], slice[index1]
+		fmt.Println("Slice Resultante:", slice)
+	} else {
+		fmt.Println("Índices inválidos!")
+	}
+}
